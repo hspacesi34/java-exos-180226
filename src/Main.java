@@ -85,11 +85,10 @@ public class Main {
             comptes.get(2).envoyer(300, comptes.get(1));
             comptes.get(0).retirer(1200);
         } catch (Exception e) {
-            throw new RuntimeException(e.getMessage());
-        } finally {
-            comptes.forEach(compte -> {
-                System.out.println("Solde de " + compte.getNom() + " est de " + compte.getSolde());
-            });
+            System.out.println(e.getMessage());
         }
+        comptes.forEach(compte -> {
+            System.out.println("Solde de " + compte.getNom() + " est de " + compte.getSolde());
+        });
     }
 }
